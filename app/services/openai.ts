@@ -1,5 +1,11 @@
 import OpenAI from 'openai';
 import { OPENAI_API_KEY } from '../config';
+import { Platform } from 'react-native';
+
+// Log API key availability for debugging
+console.log('OpenAI API Key available:', !!OPENAI_API_KEY);
+console.log('OpenAI API Key length:', OPENAI_API_KEY?.length);
+console.log('Platform:', Platform.OS);
 
 const openai = new OpenAI({
   apiKey: OPENAI_API_KEY,

@@ -104,14 +104,16 @@ async function stopRecording(recordingData: any) {
             formData.append('model', 'whisper-1');
 
             console.log('Sending to Whisper API..');
-            console.log('API Key available:', !!OPENAI_API_KEY);
-            console.log('API Key length:', OPENAI_API_KEY?.length);
+            // Use the web-specific environment variable for web platform
+            const apiKey = Platform.OS === 'web' ? process.env.EXPO_PUBLIC_OPENAI_API_KEY : OPENAI_API_KEY;
+            console.log('API Key available:', !!apiKey);
+            console.log('API Key length:', apiKey?.length);
             
             try {
               const response = await fetch('https://api.openai.com/v1/audio/transcriptions', {
                 method: 'POST',
                 headers: {
-                  'Authorization': `Bearer ${OPENAI_API_KEY}`,
+                  'Authorization': `Bearer ${apiKey}`,
                 },
                 body: formData,
               });
