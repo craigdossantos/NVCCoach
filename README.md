@@ -1,21 +1,47 @@
-# nvc coach
+# NVC Coach
 
-## plan
-- Create a simple chatbot that can help the user practice NVC. 
-- The chatbot will give the user a conversational scenario to respond to. 
-- the user can respond with text at first, and then the chatbot will respond. 
-- the conversation will be logged in a database. 
-- When the user responds with a poor response, there is a side panel that pops up with suggestions of what could be improved. 
-- the user gets a score of 1-10 based on their responses after a few minutes of conversation. 
+A chat application that helps users practice Nonviolent Communication (NVC) principles through interactive scenarios and feedback.
 
-Challenges
-- Allow the user to press a button to record their response with voice. 
-- Allow for user login
-- Admin access gives a dashboard to create new challenges for the user to try
-- the user can choose a challenge or skillset to work on
+## Features
 
-## Tech Stack
-React Native
-Expo
-Firebase
-Typescript
+- Chat interface with an AI coach trained in NVC principles
+- Voice recording and transcription for hands-free interaction
+- Real-time streaming responses
+- Mobile-friendly design
+
+## Setup
+
+1. Clone the repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Create a `.env` file in the root directory with your OpenAI API key:
+   ```
+   OPENAI_API_KEY=your_openai_api_key_here
+   ```
+   Note: Never commit your actual API key to version control.
+
+4. Start the development server:
+   ```
+   npm run web
+   ```
+
+## Environment Variables
+
+This project uses environment variables to manage sensitive information like API keys. To set up your environment:
+
+1. Copy `.env.example` to a new file called `.env`
+2. Replace the placeholder values with your actual API keys
+3. Make sure `.env` is in your `.gitignore` file to prevent accidentally committing secrets
+
+## Technologies Used
+
+- React Native / Expo
+- React Native Paper for UI components
+- OpenAI API for chat responses
+- Whisper API for voice transcription
+
+## License
+
+MIT
